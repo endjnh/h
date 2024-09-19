@@ -1,11 +1,11 @@
-der = WebApplication.CreateBuilder(args);
+builder = WebApplication.CreateBuilder(args);
 builder.Services.AddDbContext<KT2Context>(options =>
     options.UseSqlServer(builder.Configuration.GetConnectionString("KT2Context") ?? throw new InvalidOperationException("Connection string 'KT2Context' not found.")));
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
 
-var app = ilder.Build();
+var app = builder.Build();
 
 // Configure the HTTP request pipeline.
 
